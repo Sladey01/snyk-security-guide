@@ -1,29 +1,28 @@
-# Dependency directories
+# Node.js dependencies
 node_modules/
-npm-debug.log
-yarn-error.log
-yarn-debug.log
 
 # Environment variables
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
-# Build outputs
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Build files
 dist/
 build/
 
-# Editor directories and files
-.idea/
-.vscode/
-*.swp
-*.swo
-
-# OS generated files
-.DS_Store
-ThumbsDB
-ehthumbs.db
-[Dd]esktop.ini
-$RECYCLE.BIN/
+# Temporary files
+tmp/
+temp/
