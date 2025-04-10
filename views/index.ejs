@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snyk Security Guide</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-purple-900 text-white p-6 shadow-md">
+    <div class="container mx-auto">
+      <h1 class="text-3xl font-bold">Snyk Security Guide</h1>
+      <p class="mt-2">Best practices for using Snyk with different languages and frameworks</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto py-8 px-4">
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-bold mb-4">Select Language & Framework</h2>
+      <p class="mb-4">Choose a programming language and framework to see Snyk best practices, CLI usage, and common security issues.</p>
+      
+      <form action="/guide" method="get" class="mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="language" class="block text-gray-700 font-medium mb-2">Programming Language</label>
+            <select id="language" name="language" class="w-full border border-gray-300 rounded px-3 py-2" onchange="updateFrameworks()">
+              <option value="">-- Select Language --</option>
+              <option value="javascript">JavaScript</option>
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="csharp">C#</option>
+              <option value="go">Go</option>
+              <option value="php">PHP</option>
+              <option value="docker">Docker</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="framework" class="block text-gray-700 font-medium mb-2">Framework (Optional)</label>
+            <select id="framework" name="framework" class="w-full border border-gray-300 rounded px-3 py-2">
+              <option value="">-- Select Framework --</option>
+            </select>
+          </div>
+        </div>
+        
+        <button type="submit" class="mt-6 bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 transition">View Best Practices</button>
+      </form>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-bold mb-4">About Snyk</h2>
+      <p class="mb-4">Snyk is a developer-first security tool that helps you find and fix vulnerabilities in your dependencies, containers, and infrastructure as code.</p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3">Key Features:</h3>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Detect vulnerabilities in open source dependencies</li>
+        <li>Scan container images for security issues</li>
+        <li>Find misconfigurations in infrastructure as code</li>
+        <li>Integrate security testing into your development workflow</li>
+        <li>Monitor projects continuously for new vulnerabilities</li>
+      </ul>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3">Getting Started:</h3>
+      <pre class="bg-gray-100 p-4 rounded overflow-x-auto"><code>npm install -g snyk
+snyk auth
+snyk test</code></pre>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white p-6 mt-8">
+    <div class="container mx-auto">
+      <p>&copy; 2025 Snyk Security Guide - An unofficial guide to Snyk best practices</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateFrameworks() {
+      const languageSelect = document.getElementById('language');
+      const frameworkSelect = document.getElementById('framework');
+      
+      // Clear current options
+      frameworkSelect.innerHTML = '<option value="">-- Select Framework --</option>';
+      
+      const language = languageSelect.value;
+      
+      // Add framework options based on selected language
+      if (language === 'javascript') {
+        addOption(frameworkSelect, 'nodejs', 'Node.js');
+        addOption(frameworkSelect, 'react', 'React');
+      } else if (language === 'python') {
+        addOption(frameworkSelect, 'django', 'Django');
+        addOption(frameworkSelect, 'flask', 'Flask');
+      } else if (language === 'java') {
+        addOption(frameworkSelect, 'spring', 'Spring Framework');
+      } else if (language === 'csharp') {
+        addOption(frameworkSelect, 'aspnet', 'ASP.NET');
+      } else if (language === 'php') {
+        addOption(frameworkSelect, 'laravel', 'Laravel');
+      }
+    }
+    
+    function addOption(selectElement, value, text) {
+      const option = document.createElement('option');
+      option.value = value;
+      option.textContent = text;
+      selectElement.appendChild(option);
+    }
+  </script>
+</body>
+</html>

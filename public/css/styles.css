@@ -1,0 +1,33 @@
+/* Additional custom styles */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/* Remove triple backticks from code blocks */
+pre code::before,
+pre code::after {
+  content: '';
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Highlight important information */
+.highlight {
+  background-color: #faf5ff;
+  border-left: 4px solid #9061f9;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}

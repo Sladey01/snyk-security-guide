@@ -4,50 +4,44 @@ An application that summarizes Snyk best practices for different languages and f
 
 ## Overview
 
-This web application provides a comprehensive guide to using Snyk security tools with various programming languages and frameworks. It includes information on:
+This application provides developers with comprehensive guides for using Snyk with various programming languages and frameworks. It includes information about:
 
-- Installation instructions
-- Basic CLI usage
-- SCM integration options
-- CLI parameters and options
-- Best practices for security
-- Common security issues for each language/framework
+- CLI installation and basic usage
+- SCM (Source Control Management) integration
+- Common parameters and command options
+- Best practices for each language/framework
+- Common security issues to watch out for
 
 ## Supported Languages
 
-- JavaScript (Node.js, React)
-- Python (Django, Flask)
-- Java (Spring)
-- C# (ASP.NET)
+- JavaScript (with Node.js and React)
+- Python (with Django and Flask)
+- Java (with Spring)
+- C# (with ASP.NET)
 - Go
-- PHP (Laravel)
+- PHP (with Laravel)
 - Docker
 
-## Getting Started
+## Setup and Installation
 
 1. Clone this repository
 2. Install dependencies:
    ```
    npm install
    ```
-3. Start the application:
+3. Start the server:
    ```
    npm start
    ```
-4. Open your browser and navigate to `http://localhost:3000`
+4. Open your browser to `http://localhost:3000`
 
 ## Usage
 
-1. Select a programming language from the dropdown menu
-2. Optionally select a framework if available
-3. Click "View Best Practices" to see Snyk security recommendations
+Select a programming language and optionally a framework from the dropdown menus to see specific Snyk best practices, CLI usage details, and common security issues related to your selection.
 
 ## Contributing
 
-Contributions are welcome! To add support for additional languages or frameworks:
-
-1. Update the `data/guides.js` file with the new language/framework information
-2. Update the frontend dropdown in `views/index.ejs` to include the new option
+Contributions are welcome! Feel free to submit pull requests to add support for additional languages or frameworks, or to update existing guides with the latest best practices.
 
 ## License
 
