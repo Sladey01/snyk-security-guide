@@ -1,6 +1,29 @@
+# Dependency directories
 node_modules/
-package-lock.json
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Environment variables
 .env
-.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+dist/
+build/
+
+# Editor directories and files
+.idea/
 .vscode/
-*.log
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+ThumbsDB
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
