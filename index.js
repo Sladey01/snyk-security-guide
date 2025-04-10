@@ -25,6 +25,35 @@ app.get('/guide', (req, res) => {
   res.render('guide', { language, framework, guide });
 });
 
+// API endpoint to get languages and frameworks
+app.get('/api/languages', (req, res) => {
+  const guides = require('./data/guides');
+  const languages = {};
+  
+  Object.keys(guides).forEach(lang => {
+    languages[lang] = {
+      name: capitalizeFirstLetter(lang),
+      frameworks: guides[lang].frameworks ? Object.keys(guides[lang].frameworks).map(fw => ({
+        id: fw,
+        name: capitalizeFirstLetter(fw)
+      })) : []
+    };
+  });
+  
+  res.json(languages);
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).render('404');
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something went wrong! Please try again later.');
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
@@ -41,4 +70,9 @@ function getSnykGuide(language, framework) {
   } else {
     return { error: 'Please select a language and/or framework' };
   }
+}
+
+// Helper function to capitalize first letter
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
