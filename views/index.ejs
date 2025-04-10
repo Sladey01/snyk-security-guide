@@ -76,13 +76,11 @@ snyk test</code></pre>
 
   <script>
     function updateFrameworks() {
-      const languageSelect = document.getElementById('language');
+      const language = document.getElementById('language').value;
       const frameworkSelect = document.getElementById('framework');
       
-      // Clear current options
+      // Clear existing options
       frameworkSelect.innerHTML = '<option value="">-- Select Framework --</option>';
-      
-      const language = languageSelect.value;
       
       // Add framework options based on selected language
       if (language === 'javascript') {

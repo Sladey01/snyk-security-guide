@@ -1,18 +1,18 @@
-/* Additional custom styles */
+/* Custom styles */
 pre {
-  white-space: pre-wrap;
-  word-break: break-word;
+  border-radius: 4px;
+  overflow-x: auto;
 }
 
 code {
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
 }
 
-/* Remove triple backticks from code blocks */
-pre code::before,
-pre code::after {
-  content: '';
-  display: none;
+/* Style for code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
 }
 
 /* Responsive adjustments */
@@ -23,11 +23,14 @@ pre code::after {
   }
 }
 
-/* Highlight important information */
-.highlight {
-  background-color: #faf5ff;
-  border-left: 4px solid #9061f9;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 0.25rem;
+/* Custom button styles */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5);
+}
+
+/* Additional styles for the guide page */
+.language-bash {
+  background-color: #282c34;
+  color: #abb2bf;
 }
